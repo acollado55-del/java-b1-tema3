@@ -4,20 +4,31 @@ public class Book extends Product {
     public Book(int id, String name, double price, String author) {
         super(id, name, price);
         // TODO: call setAuthor
+        this.setAuthor(author);
+
     }
 
     public Book(int id, String name, double price) {
         // TODO: call other constructor using "Unknown"
         super(id, name, price);
+
     }
 
     public void setAuthor(String author) {
         // TODO: if author is null or empty, print "Author name cannot be empty." and assign "Unknown"
         // else assign the value
+        if(author == null || author.isEmpty()) {
+            System.out.println("Author name cannot be empty.");
+            this.author = "Unknown";
+        } else {
+            this.author = author;
+        }
+
     }
 
     public String getAuthor() {
         // TODO: return author
+        return author;
       
     }
 
@@ -25,6 +36,7 @@ public class Book extends Product {
     public String toString() {
         // TODO: return the string in the format:
         // <id> - <name>: <price>€ - Author: <author>
+        return getId() + " - " + getName() + ": " + getPrice() + "€ - Author: " + author;
        
     }
 }
