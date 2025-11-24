@@ -81,6 +81,7 @@ public class Employee {
     // Initialization block: print "New employee created."
     {
         // TODO: print "New employee created."
+        System.out.println("New employee created.");
     }
 
     // Constructor: initialize id, name, salary
@@ -89,56 +90,71 @@ public class Employee {
         // TODO: assign id
         // TODO: call setName(name)
         // TODO: call setSalary(salary)
+        this.id = id;
+        this.setName(name);
+        this.setSalary(salary);
     }
 
     // Getter for id
     public int getId() {
         // TODO: return id
-        return 0;
+        return this.id;
     }
 
     // Setter for id
     public void setId(int id) {
         // TODO: assign value to this.id
+        this.id = id;
     }
 
     // Getter for name
     public String getName() {
         // TODO: return name
-        return null;
+        return this.name;
     }
 
     // Setter for name
     // If null or empty, print "Name cannot be empty."
     public void setName(String name) {
         // TODO: validate and assign name
+        if (name == null || name.isEmpty()) {
+            System.out.println("Name cannot be empty.");
+        } else {
+            this.name = name;
+        }   
     }
 
     // Getter for salary
     public double getSalary() {
         // TODO: return salary
-        return 0.0;
+        return this.salary;
     }
 
     // Setter for salary
     // If salary is negative, print "Salary cannot be negative."
     public void setSalary(double salary) {
         // TODO: validate and assign salary
+        if (salary < 0) {
+            System.out.println("Salary cannot be negative.");
+        } else {
+            this.salary = salary;
+        }
     }
 
  // -------------------------------------------------------------
     // Test manual per a provar a l'IDE
 	// Test manual para probar con el IDE
     // -------------------------------------------------------------
-    /*
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Developer d = new Developer(1, "Laura", 3000.0, "Java");
         System.out.println(d);
         d.setName("");
         d.setSalary(-500);
         d.setLanguage("");
-    }
-    */
+         System.out.println(d);
+        }
+
+    
     // Torna a comentar aquest main quan vulguis executar els tests amb:
     // mvn test
 	// Vuelve a comentar este main cuando quieras ejecutar los tests con:
